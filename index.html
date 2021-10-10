@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #main {}
+  </style>
+</head>
+
+<body>
+  <div id="main" style="width: 80vw;height:50vh;"></div>
+</body>
+<script src="./js/echarts.js"></script>
+<script>
+  // 基于准备好的dom，初始化echarts实例
+  var myChart = echarts.init(document.getElementById('main'));
+  const yearMonthDate = ['2021-09', '2021-10']
+  const dayDate = [6, 3]
+  // 指定图表的配置项和数据
+  var option = {
+    xAxis: {
+      type: 'category',
+      data: yearMonthDate
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: [{
+      data: [6, 3],
+      type: 'line',
+      smooth: true
+    }]
+  };
+
+  // 使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+</script>
+
+</html>
